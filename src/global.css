@@ -4,7 +4,7 @@
 
 @import "nativewind/theme";
 
-/* Registers utility classes (text-primary, text-title, text-text, bg-background, etc.) */
+/* Utility class registrations */
 @theme inline {
   --color-primary: var(--primary);
   --color-success: var(--success);
@@ -16,15 +16,15 @@
   --color-surface: var(--surface);
   --color-link: var(--link);
   --color-navBackground: var(--navBackground);
-  --color-border: var(--border);
+  --color-customBorder: var(--border);
   --color-iconColor: var(--iconColor);
   --color-iconColorFocused: var(--iconColorFocused);
 }
 
-/* Base Light and Dark Variables */
+/* Base Variable Token Sets */
 @layer base {
-  :root,
-  .light {
+  /* Light mode defaults */
+  :root {
     --primary: #0074be;
     --success: #27ae60;
     --error: #cc475a;
@@ -40,19 +40,22 @@
     --iconColorFocused: #201e2b;
   }
 
-  .dark {
-    --primary: #0074be;
-    --success: #27ae60;
-    --error: #cc475a;
-    --warning: #cc475a;
-    --text: #d4d4d4;
-    --title: #ffffff;
-    --background: #252231;
-    --surface: #2f2b3d;
-    --link: #0074be;
-    --navBackground: #201e2b;
-    --border: #094786;
-    --iconColor: #9591a5;
-    --iconColorFocused: #ffffff;
+  /* Dark mode overrides */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #0074be;
+      --success: #27ae60;
+      --error: #cc475a;
+      --warning: #cc475a;
+      --text: #d4d4d4;
+      --title: #ffffff;
+      --background: #252231;
+      --surface: #2f2b3d;
+      --link: #0074be;
+      --navBackground: #201e2b;
+      --border: #094786;
+      --iconColor: #9591a5;
+      --iconColorFocused: #ffffff;
+    }
   }
 }

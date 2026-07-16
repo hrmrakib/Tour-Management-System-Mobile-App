@@ -13,15 +13,13 @@ const ThemedView: React.FC<ThemedViewProps> = ({
   variant = "primary",
   ...props
 }) => {
-  // Map your variants to NativeWind utility classes
-  // "primary" resolves dynamically to light/dark background colors from your CSS variables
-  const variantClass = variant === "primary" ? "bg-background" : "bg-black";
+  // Map variants directly to your registered Tailwind theme color variables
+  // - "primary" handles your main screen canvas background
+  // - "secondary" handles cards or sub-sections via your surface color variable
+  const variantClass = variant === "primary" ? "bg-background" : "bg-surface";
 
   return (
-    <View
-      className={`flex-1 bg-transparent dark:bg-black ${variantClass} ${className}`}
-      {...props}
-    >
+    <View className={`flex-1 ${variantClass} ${className}`} {...props}>
       {children}
     </View>
   );

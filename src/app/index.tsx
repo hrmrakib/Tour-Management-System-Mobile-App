@@ -1,4 +1,5 @@
 import ThemedText from "@/components/ui/ThemedText";
+import ThemeToggle from "@/components/ui/ThemedToggle";
 import ThemedView from "@/components/ui/ThemedView";
 
 export default function HomeScreen() {
@@ -7,6 +8,8 @@ export default function HomeScreen() {
       <ThemedText variant='title'>Home is not house!</ThemedText>
       <ThemedText variant='title'>Home is not house!</ThemedText>
       <ThemedText variant='title'>Home is not house!</ThemedText>
+
+      <ThemeToggle showLabel />
     </ThemedView>
   );
 }
