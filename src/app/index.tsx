@@ -1,10 +1,12 @@
 import ThemedText from "@/components/ui/ThemedText";
-import { View } from "react-native";
+import ThemedView from "@/components/ui/ThemedView";
 
 export default function HomeScreen() {
   return (
-    <View className='flex-row pt-2 bg-surface border-t border-customBorder shadow-sm'>
-      <ThemedText className='text-black'>Home sfsfsaf</ThemedText>
-    </View>
+    <ThemedView className='flex-1 p-5 gap-3 '>
+      <ThemedText variant='title'>Home is not house!</ThemedText>
+      <ThemedText variant='title'>Home is not house!</ThemedText>
+      <ThemedText variant='title'>Home is not house!</ThemedText>
+    </ThemedView>
   );
 }

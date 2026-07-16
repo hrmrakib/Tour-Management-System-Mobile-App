@@ -8,12 +8,34 @@ interface ThemedTextProps extends TextProps {
 const ThemedText: React.FC<ThemedTextProps> = ({
   variant = "default",
   children,
-  className,
+  className = "",
   ...props
 }) => {
-  let variantMapping = 
+  let variantMapping = "text-text text-base font-normal";
 
-  return <Text>{children}</Text>;
+  switch (variant) {
+    case "semibold":
+      variantMapping = "text-text text-base font-semibold";
+      break;
+    case "bold":
+      variantMapping = "text-text text-base font-bold";
+      break;
+    case "title":
+      variantMapping =
+        "text-title dark:text-title text-2xl font-bold tracking-tight";
+      break;
+    case "caption":
+      variantMapping = "text-text text-sm font-medium opacity-80";
+      break;
+    default:
+      variantMapping = "text-text text-base font-normal";
+  }
+
+  return (
+    <Text className={`${variantMapping} ${className}`} {...props}>
+      {children}
+    </Text>
+  );
 };
 
 export default ThemedText;

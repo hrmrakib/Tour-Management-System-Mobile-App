@@ -3,3 +3,56 @@
 @import "tailwindcss/utilities.css";
 
 @import "nativewind/theme";
+
+/* Registers utility classes (text-primary, text-title, text-text, bg-background, etc.) */
+@theme inline {
+  --color-primary: var(--primary);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-text: var(--text);
+  --color-title: var(--title);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-link: var(--link);
+  --color-navBackground: var(--navBackground);
+  --color-border: var(--border);
+  --color-iconColor: var(--iconColor);
+  --color-iconColorFocused: var(--iconColorFocused);
+}
+
+/* Base Light and Dark Variables */
+@layer base {
+  :root,
+  .light {
+    --primary: #0074be;
+    --success: #27ae60;
+    --error: #cc475a;
+    --warning: #f2994a;
+    --text: #4a5565;
+    --title: #3e4955;
+    --background: #f7f9fc;
+    --surface: #ffffff;
+    --link: #0074be;
+    --navBackground: #e8e7ef;
+    --border: #e0e0e0;
+    --iconColor: #686477;
+    --iconColorFocused: #201e2b;
+  }
+
+  .dark {
+    --primary: #0074be;
+    --success: #27ae60;
+    --error: #cc475a;
+    --warning: #cc475a;
+    --text: #d4d4d4;
+    --title: #ffffff;
+    --background: #252231;
+    --surface: #2f2b3d;
+    --link: #0074be;
+    --navBackground: #201e2b;
+    --border: #094786;
+    --iconColor: #9591a5;
+    --iconColorFocused: #ffffff;
+  }
+}
