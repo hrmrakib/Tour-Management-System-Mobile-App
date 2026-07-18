@@ -1,7 +1,8 @@
-import { Image, Text, View } from "react-native";
+import { Image, ImageSourcePropType, Text, View } from "react-native";
 
 interface AvatarProps {
-  url?: string;
+  // Allow a network string OR a local required asset
+  url?: string | ImageSourcePropType;
   name?: string;
   size?: number;
   isOnline?: boolean;
@@ -22,6 +23,9 @@ export default function Avatar({
       .substring(0, 2);
   };
 
+  // Determine if it's a web URL string or a local require() object
+  const imageSource = typeof url === "string" ? { uri: url } : url;
+
   return (
     <View
       className='relative items-center justify-center'
@@ -29,7 +33,7 @@ export default function Avatar({
     >
       {url ? (
         <Image
-          source={{ uri: url }}
+          source={imageSource!}
           resizeMode='cover'
           className='rounded-full'
           style={{ width: size, height: size }}

@@ -2,7 +2,7 @@ import React from "react";
 import { Text, TextProps } from "react-native";
 
 interface ThemedTextProps extends TextProps {
-  variant?: "default" | "semibold" | "bold" | "title" | "caption";
+  variant?: "default" | "medium" | "semibold" | "bold" | "title" | "caption";
 }
 
 const ThemedText: React.FC<ThemedTextProps> = ({
@@ -14,6 +14,9 @@ const ThemedText: React.FC<ThemedTextProps> = ({
   let variantMapping = "text-text text-base font-normal";
 
   switch (variant) {
+    case "medium":
+      variantMapping = "text-text text-base font-semibold";
+      break;
     case "semibold":
       variantMapping = "text-text text-base font-semibold";
       break;

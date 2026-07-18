@@ -25,7 +25,7 @@
 @layer base {
   /* Light mode defaults */
   :root {
-    --primary: #0074be;
+    --primary: #3ebc7c;
     --success: #27ae60;
     --error: #cc475a;
     --warning: #f2994a;
@@ -43,7 +43,7 @@
   /* Dark mode overrides */
   @media (prefers-color-scheme: dark) {
     :root {
-      --primary: #0074be;
+      --primary: #3ebc7c;
       --success: #27ae60;
       --error: #cc475a;
       --warning: #cc475a;
