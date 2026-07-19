@@ -1,4 +1,5 @@
 // import RouteDebugger from "@/components/dev/RouteDebugger";
+import DraggableThemeToggle from "@/components/dev/DraggableThemeToggle";
 import TabNavigation from "@/components/tabBar/TabNavigation";
 import { ThemeProvider } from "@/context/ThemeContext";
 import "@/global.css";
@@ -10,6 +11,8 @@ export default function RootLayout() {
       <ThemeProvider>
         {/* ? DEBUGGING TOOLS ? ONLY SHOW IN DEV */}
         {/* <RouteDebugger /> */}
+        <DraggableThemeToggle />
+        {/* ? DEBUGGING TOOLS ? ONLY SHOW IN DEV */}
 
         <TabNavigation />
       </ThemeProvider>

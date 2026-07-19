@@ -12,6 +12,7 @@ interface ThemedInputProps extends TextInputProps {
   label?: string;
   error?: string;
   containerClassName?: string;
+  labelClassName?: string;
   inputClassName?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
@@ -22,6 +23,7 @@ const ThemedInput = ({
   label,
   error,
   containerClassName,
+  labelClassName,
   inputClassName,
   leftIcon,
   rightIcon,
@@ -55,7 +57,9 @@ const ThemedInput = ({
     <View className={`w-full mb-3.75 ${containerClassName || ""}`}>
       {/* Label */}
       {label && (
-        <Text className='text-title text-[14px] font-semibold mb-2 ml-1'>
+        <Text
+          className={`text-title text-sm font-medium mb-2 ml-1 ${labelClassName || ""}`}
+        >
           {label}
         </Text>
       )}
@@ -83,7 +87,7 @@ const ThemedInput = ({
 
         {/* Text Input */}
         <TextInput
-          className={`text-text flex-1 text-[16px] ${
+          className={`text-text flex-1 text-[16px] border-border ${
             multiline ? "min-h-25" : "h-full"
           } ${inputClassName || ""}`}
           style={multiline && { textAlignVertical: "top" }}

@@ -15,7 +15,7 @@ const ThemedText: React.FC<ThemedTextProps> = ({
 
   switch (variant) {
     case "medium":
-      variantMapping = "text-text text-base font-semibold";
+      variantMapping = "text-text text-base font-medium";
       break;
     case "semibold":
       variantMapping = "text-text text-base font-semibold";
@@ -35,7 +35,12 @@ const ThemedText: React.FC<ThemedTextProps> = ({
   }
 
   return (
-    <Text className={`${variantMapping} ${className}`} {...props}>
+    <Text
+      className={`${variantMapping} ${className}`}
+      {...props}
+      accessibilityLabel={children?.toString()}
+      accessibilityHint={children?.toString()}
+    >
       {children}
     </Text>
   );

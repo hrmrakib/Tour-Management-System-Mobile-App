@@ -12,8 +12,6 @@ function TabNavigation() {
         tabBarStyle: {
           backgroundColor: isDark ? "#121212" : "#ffffff",
           borderTopColor: isDark ? "#333333" : "#e5e5e5",
-          borderWidth: 1,
-          borderColor: isDark ? "#1d14c9" : "#ed0767",
           // 1. Set a fixed height for the tab bar
           height: 65,
           // 2. Adjust padding to perfectly center the icon and label
