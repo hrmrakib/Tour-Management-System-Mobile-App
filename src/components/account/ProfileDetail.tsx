@@ -11,7 +11,7 @@ const ProfileDetail = ({
 }) => {
   return (
     <View className='bg-surface mt-8 rounded-2xl p-4'>
-      <View className='w-full flex flex-row items-center justify-between pb-2 border-b  border-gray-200!'>
+      <View className='w-full flex flex-row items-center justify-between pb-4 border-b  border-gray-200!'>
         <ThemedText variant='medium' className=''>
           Personal Details
         </ThemedText>
@@ -24,7 +24,7 @@ const ProfileDetail = ({
         </ThemedText>
       </View>
 
-      <View className='gap-y-2 mt-3'>
+      <View className='gap-y-4 mt-4'>
         <View className='flex flex-row items-center justify-between'>
           <ThemedText variant='default'>Name:</ThemedText>
           <ThemedText variant='medium'>{user.name}</ThemedText>
@@ -32,7 +32,7 @@ const ProfileDetail = ({
         <View className='flex flex-row items-center justify-between'>
           <ThemedText variant='default'>Verified address:</ThemedText>
           <ThemedText variant='medium' className='flex-1 ml-5'>
-            {user.address.slice(0, 20) + "..."}
+            {user.address.slice(0, 25) + "..."}
           </ThemedText>
         </View>
         <View className='flex flex-row items-center justify-between'>

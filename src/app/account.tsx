@@ -67,7 +67,7 @@ const Account = () => {
         </View>
 
         <View className='flex-1 w-[90%] mx-auto'>
-          {editMode ? (
+          {!editMode ? (
             <ProfileDetail user={user} handleChangeMode={handleChangeMode} />
           ) : (
             <EditProfile user={user} handleChangeMode={handleChangeMode} />
