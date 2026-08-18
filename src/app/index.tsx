@@ -8,13 +8,14 @@ export default function HomeScreen() {
   return (
     <ThemedView className='flex-1 p-5 gap-3 '>
       <StatusBar barStyle='dark-content' hidden={false} />
-      <ThemedText variant='title'>hey, hello</ThemedText>
+      <ThemedText variant='title'>Hey, hello there!</ThemedText>
 
       <ThemedInput label='You email' />
+      <ThemedInput label='You password' secureTextEntry />
 
       <Switch />
 
-      <ThemeToggle showLabel />
+      <ThemeToggle showLabel={true} />
     </ThemedView>
   );
 }

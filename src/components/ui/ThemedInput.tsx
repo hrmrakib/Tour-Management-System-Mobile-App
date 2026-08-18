@@ -58,7 +58,7 @@ const ThemedInput = ({
       {/* Label */}
       {label && (
         <Text
-          className={`text-title text-sm font-medium mb-2 ml-1 ${labelClassName || ""}`}
+          className={`text-title text-base font-medium mb-2 ml-1 ${labelClassName || ""}`}
         >
           {label}
         </Text>
