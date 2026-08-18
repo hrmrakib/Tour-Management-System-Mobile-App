@@ -8,9 +8,7 @@ export default function HomeScreen() {
   return (
     <ThemedView className='flex-1 p-5 gap-3 '>
       <StatusBar barStyle='dark-content' hidden={false} />
-      <ThemedText variant='title'>I Love You</ThemedText>
-      <ThemedText variant='title'>I Love You at night</ThemedText>
-      <ThemedText variant='title'>I Love You at mid-night 😋</ThemedText>
+      <ThemedText variant='title'>hey, hello</ThemedText>
 
       <ThemedInput label='You email' />
 
