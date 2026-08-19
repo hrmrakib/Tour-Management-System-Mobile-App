@@ -105,34 +105,34 @@ const Search = () => {
   });
 
   return (
-    <ThemedView className="flex-1 bg-slate-50">
+    <ThemedView className="flex-1 bg-slate-50 dark:bg-slate-900">
       <View className="px-5 pt-4 pb-2">
-        <Text className="text-slate-900 font-black text-2xl mb-4">
+        <Text className="text-slate-900 dark:text-white font-black text-2xl mb-4">
           Explore Tours
         </Text>
 
         {/* Search & Filter Bar */}
         <View className="flex-row items-center space-x-3 mb-2">
-          <View className="flex-1 flex-row items-center bg-slate-100 rounded-2xl px-4 py-3 mr-3">
+          <View className="flex-1 flex-row items-center bg-slate-100 dark:bg-slate-800 rounded-2xl px-4 py-3 mr-3">
             <Ionicons name="search-outline" size={20} color="#94a3b8" />
             <TextInput
               placeholder="Search destination, hotel, forest..."
               placeholderTextColor="#94a3b8"
-              className="flex-1 ml-2 text-slate-800 text-sm font-medium"
+              className="flex-1 ml-2 text-slate-800 dark:text-slate-200 text-sm font-medium"
               value={searchQuery}
               onChangeText={setSearchQuery}
             />
           </View>
           <TouchableOpacity
             onPress={() => setIsFilterVisible(true)}
-            className="bg-teal-600 w-12 h-12 rounded-2xl items-center justify-center"
+            className="bg-teal-600 dark:bg-teal-500 w-12 h-12 rounded-2xl items-center justify-center"
           >
             <Ionicons name="options-outline" size={22} color="white" />
           </TouchableOpacity>
         </View>
       </View>
 
-      <View className="flex-row items-center justify-between px-5 py-3 border-b border-slate-200">
+      <View className="flex-row items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-700">
         <Text className="text-slate-400 font-bold text-[11px] tracking-widest uppercase">
           Search Results
         </Text>
@@ -171,12 +171,12 @@ const Search = () => {
             onPress={() => setIsFilterVisible(false)}
             activeOpacity={1}
           />
-          <View className="bg-white rounded-t-3xl pt-2 pb-6 px-5 max-h-[85%]">
+          <View className="bg-white dark:bg-slate-900 rounded-t-3xl pt-2 pb-6 px-5 max-h-[85%]">
             {/* Drag Indicator */}
-            <View className="w-12 h-1.5 bg-slate-200 rounded-full self-center mb-6" />
+            <View className="w-12 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full self-center mb-6" />
 
             <View className="flex-row items-center justify-between mb-6">
-              <Text className="text-slate-900 font-black text-xl">
+              <Text className="text-slate-900 dark:text-white font-black text-xl">
                 Advanced Filters
               </Text>
               <TouchableOpacity onPress={resetFilters}>
@@ -206,12 +206,12 @@ const Search = () => {
                         className={`px-4 py-2 rounded-full border mr-2 ${
                           isSelected
                             ? "bg-teal-500 border-teal-500"
-                            : "bg-white border-slate-200"
+                            : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
                         }`}
                       >
                         <Text
                           className={`font-bold text-sm ${
-                            isSelected ? "text-white" : "text-slate-600"
+                            isSelected ? "text-white" : "text-slate-600 dark:text-slate-400"
                           }`}
                         >
                           {div}
@@ -235,7 +235,7 @@ const Search = () => {
               {/* Custom Slider */}
               <View className="mb-8">
                 <View
-                  className="h-1.5 bg-slate-100 rounded-full w-full justify-center relative"
+                  className="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full w-full justify-center relative"
                   onLayout={(e) => {
                     sliderWidth.current = e.nativeEvent.layout.width;
                   }}
@@ -275,13 +275,13 @@ const Search = () => {
                       onPress={() => toggleAmenity(amenity)}
                       className={`px-4 py-3 rounded-2xl border mb-2 w-[48%] ${
                         isSelected
-                          ? "bg-teal-50 border-teal-500"
-                          : "bg-white border-slate-200"
+                          ? "bg-teal-50 dark:bg-teal-900/30 border-teal-500"
+                          : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
                       }`}
                     >
                       <Text
                         className={`font-semibold text-sm ${
-                          isSelected ? "text-teal-700" : "text-slate-600"
+                          isSelected ? "text-teal-700 dark:text-teal-400" : "text-slate-600 dark:text-slate-400"
                         }`}
                       >
                         {amenity}

@@ -21,7 +21,7 @@ const SearchTourCard: React.FC<SearchTourCardProps> = ({ tour }) => {
           params: { slug: tour.slug },
         })
       }
-      className='w-full bg-white rounded-[24px] p-3 flex-row mb-4 border border-slate-100'
+      className='w-full bg-white dark:bg-slate-800 rounded-[24px] p-3 flex-row mb-4 border border-slate-100 dark:border-slate-700'
       style={styles.cardShadow}
     >
       {/* Left Image */}
@@ -33,7 +33,7 @@ const SearchTourCard: React.FC<SearchTourCardProps> = ({ tour }) => {
             resizeMode='cover'
           />
         ) : (
-          <View className='w-full h-full bg-slate-200 items-center justify-center'>
+          <View className='w-full h-full bg-slate-200 dark:bg-slate-700 items-center justify-center'>
             <Ionicons name="image-outline" size={24} color="#94a3b8" />
           </View>
         )}
@@ -44,12 +44,12 @@ const SearchTourCard: React.FC<SearchTourCardProps> = ({ tour }) => {
         <View>
           <View className='flex-row items-center mb-1.5'>
             <Ionicons name='location-outline' size={14} color='#10b981' />
-            <Text className='text-slate-400 font-bold text-[10px] ml-1 uppercase tracking-widest'>
+            <Text className='text-slate-400 dark:text-slate-400 font-bold text-[10px] ml-1 uppercase tracking-widest'>
               {tour.location || "UNKNOWN"}
             </Text>
           </View>
 
-          <Text className='text-slate-900 font-extrabold text-[15px] leading-tight' numberOfLines={2}>
+          <Text className='text-slate-900 dark:text-white font-extrabold text-[15px] leading-tight' numberOfLines={2}>
             {tour.title}
           </Text>
         </View>
