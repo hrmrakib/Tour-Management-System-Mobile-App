@@ -42,7 +42,7 @@ function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
   return (
     <View style={[styles.tabBarWrapper, { bottom: 6 }]}>
-      <View style={styles.tabBarContainer}>
+      <View style={[styles.tabBarContainer, { backgroundColor: isDark ? "rgba(30, 41, 59, 0.85)" : "rgba(255,255,255,0.7)" }]}>
         {/* Background Main Glass */}
         <GlassView
           style={StyleSheet.absoluteFill}
@@ -160,7 +160,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 32,
     overflow: "hidden",
-    backgroundColor: "rgba(255,255,255,0.7)", // Fallback for bare react-native
   },
   innerContainer: {
     flex: 1,
