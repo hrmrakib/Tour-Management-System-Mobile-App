@@ -4,6 +4,7 @@ import ProfileDetail from "@/components/account/ProfileDetail";
 import Avatar from "@/components/ui/Avatar";
 import ThemedScrollView from "@/components/ui/ThemedScrollView";
 import ThemedText from "@/components/ui/ThemedText";
+import ThemeToggle from "@/components/ui/ThemedToggle";
 import ThemedView from "@/components/ui/ThemedView";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
@@ -76,6 +77,9 @@ const Account = () => {
           <View className='my-8'>
             <Logout />
           </View>
+        </View>
+        <View className='flex-1 w-[90%] mx-auto pb-10'>
+          <ThemeToggle showLabel={true} />
         </View>
       </ThemedView>
     </ThemedScrollView>

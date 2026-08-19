@@ -1,21 +1,27 @@
-import ThemedInput from "@/components/ui/ThemedInput";
+import TourCard from "@/components/tour/TourCard";
 import ThemedText from "@/components/ui/ThemedText";
-import ThemeToggle from "@/components/ui/ThemedToggle";
 import ThemedView from "@/components/ui/ThemedView";
-import { StatusBar, Switch } from "react-native";
+import { toursData } from "@/constants/data";
+import { ITour } from "@/types/tour/tour.type";
+import { ScrollView, StatusBar } from "react-native";
 
 export default function HomeScreen() {
   return (
     <ThemedView className='flex-1 p-5 gap-3 '>
       <StatusBar barStyle='dark-content' hidden={false} />
-      <ThemedText variant='title'>Hey, hello there!</ThemedText>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerClassName='p-5 gap-3 pb-10'
+      >
+        <ThemedText variant='title'>
+          Hey, hello there! Chola ghurte zay
+        </ThemedText>
 
-      <ThemedInput label='You email' />
-      <ThemedInput label='You password' secureTextEntry />
-
-      <Switch />
-
-      <ThemeToggle showLabel={true} />
+        <ThemedText variant='semibold'>Tours Available (5)</ThemedText>
+        {toursData.map((tour: ITour) => (
+          <TourCard key={tour.slug} tour={tour} />
+        ))}
+      </ScrollView>
     </ThemedView>
   );
 }
