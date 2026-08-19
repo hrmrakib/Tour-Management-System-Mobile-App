@@ -3,6 +3,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import ThemedView from "../ui/ThemedView";
 
 export interface TourCardProps {
   tour: ITour;
@@ -11,7 +12,6 @@ export interface TourCardProps {
 const TourCard: React.FC<TourCardProps> = ({ tour }) => {
   const router = useRouter();
 
-  console.log(tour.slug);
   return (
     <TouchableOpacity
       activeOpacity={0.9}
@@ -25,7 +25,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
       style={styles.cardShadow}
     >
       {/* Header Image & Badges */}
-      <View className='relative w-full h-56'>
+      <ThemedView className='relative w-full h-56'>
         <Image
           source={tour.images?.[0]}
           className='w-full h-full object-cover'
@@ -46,20 +46,20 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             {tour.tourType}
           </Text>
         </View>
-      </View>
+      </ThemedView>
 
       {/* Card Content body */}
-      <View className='p-5'>
-        <Text className='text-teal-600 font-bold text-[11px] tracking-wider uppercase mb-1'>
+      <ThemedView className='p-5'>
+        <Text className='text-teal-600 dark:text-teal-300 font-bold text-[11px] tracking-wider uppercase mb-1'>
           {tour.division}
         </Text>
 
-        <Text className='text-teal-900 font-extrabold text-xl mb-2 leading-tight'>
+        <Text className='text-teal-900 dark:text-teal-500 font-extrabold text-xl mb-2 leading-tight'>
           {tour.title}
         </Text>
 
         <Text
-          className='text-slate-500 text-sm leading-relaxed mb-6'
+          className='text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6'
           numberOfLines={2}
         >
           {tour.description}
@@ -72,7 +72,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
               Pricing starts from
             </Text>
             <View className='flex-row items-center'>
-              <Text className='text-slate-900 font-black text-xl'>
+              <Text className='text-slate-900 dark:text-slate-300 font-black text-xl'>
                 ৳{tour.costFrom?.toLocaleString()}
               </Text>
             </View>
@@ -85,7 +85,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             <Ionicons name='chevron-forward' size={16} color='#0d9488' />
           </View>
         </View>
-      </View>
+      </ThemedView>
     </TouchableOpacity>
   );
 };

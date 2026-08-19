@@ -1,4 +1,4 @@
-import { TUser } from "@/app/account";
+import { TUser } from "@/app/(tabs)/account";
 import ThemedText from "@/components/ui/ThemedText";
 import { View } from "react-native";
 import ThemedButton from "../ui/ThemedButton";

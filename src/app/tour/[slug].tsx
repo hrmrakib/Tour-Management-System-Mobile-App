@@ -1,3 +1,4 @@
+import ThemedView from "@/components/ui/ThemedView";
 import { ITour } from "@/types/tour/tour.type";
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
@@ -82,7 +83,7 @@ const TourDetails = () => {
         </View>
 
         {/* --- MAIN CONTENT OVERLAPPING IMAGE --- */}
-        <View className='bg-white -mt-8 rounded-t-3xl px-5 pt-6 pb-24 shadow-sm'>
+        <ThemedView className='-mt-8 rounded-t-3xl px-5 pt-6 pb-24 shadow-sm'>
           {/* Tags & Badges */}
           <View className='flex-row items-center justify-between mb-3'>
             <View className='bg-teal-50 px-3 py-1.5 rounded-md'>
@@ -92,18 +93,22 @@ const TourDetails = () => {
             </View>
             <View className='flex-row items-center'>
               <Ionicons name='star' size={16} color='#fbbf24' />
-              <Text className='text-slate-700 font-bold ml-1'>4.8</Text>
-              <Text className='text-slate-400 text-xs ml-1'>(120 reviews)</Text>
+              <Text className='text-slate-700 dark:text-slate-300 font-bold ml-1'>
+                4.8
+              </Text>
+              <Text className='text-slate-400 dark:text-slate-300 text-xs ml-1'>
+                (120 reviews)
+              </Text>
             </View>
           </View>
 
           {/* Title & Location */}
-          <Text className='text-slate-900 font-black text-3xl mb-2 leading-tight'>
+          <Text className='text-slate-900 dark:text-slate-300 font-black text-3xl mb-2 leading-tight'>
             {tour.title}
           </Text>
           <View className='flex-row items-center mb-6'>
             <Ionicons name='location' size={18} color='#0d9488' />
-            <Text className='text-slate-500 font-medium ml-1.5 text-base'>
+            <Text className='text-slate-500 dark:text-slate-300 font-medium ml-1.5 text-base'>
               {tour.location}, {tour.division as unknown as string}
             </Text>
           </View>
@@ -112,19 +117,25 @@ const TourDetails = () => {
           <View className='flex-row justify-between bg-slate-50 p-4 rounded-2xl mb-6'>
             <View className='items-center'>
               <Ionicons name='time-outline' size={22} color='#0d9488' />
-              <Text className='text-slate-400 text-xs mt-1'>Duration</Text>
+              <Text className='text-slate-400 dark:text-slate-800 text-xs mt-1'>
+                Duration
+              </Text>
               <Text className='text-slate-800 font-bold text-sm'>1 Day</Text>
             </View>
             <View className='items-center'>
               <Ionicons name='people-outline' size={22} color='#0d9488' />
-              <Text className='text-slate-400 text-xs mt-1'>Group Size</Text>
+              <Text className='text-slate-400 dark:text-slate-800 text-xs mt-1'>
+                Group Size
+              </Text>
               <Text className='text-slate-800 font-bold text-sm'>
                 Max {tour.maxGuest}
               </Text>
             </View>
             <View className='items-center'>
               <Ionicons name='body-outline' size={22} color='#0d9488' />
-              <Text className='text-slate-400 text-xs mt-1'>Min Age</Text>
+              <Text className='text-slate-400 dark:text-slate-800 text-xs mt-1'>
+                Min Age
+              </Text>
               <Text className='text-slate-800 font-bold text-sm'>
                 {tour.minAge}+ yrs
               </Text>
@@ -132,15 +143,15 @@ const TourDetails = () => {
           </View>
 
           {/* Description */}
-          <Text className='text-slate-800 font-bold text-xl mb-2'>
+          <Text className='text-slate-800 dark:text-slate-300 font-bold text-xl mb-2'>
             Overview
           </Text>
-          <Text className='text-slate-500 text-base leading-relaxed mb-6'>
+          <Text className='text-slate-500 dark:text-slate-300 text-base leading-relaxed mb-6'>
             {tour.description}
           </Text>
 
           {/* Dates & Locations */}
-          <Text className='text-slate-800 font-bold text-xl mb-3'>
+          <Text className='text-slate-800 dark:text-slate-300 font-bold text-xl mb-3'>
             Schedule
           </Text>
           <View className='border border-slate-100 rounded-2xl p-4 mb-6 space-y-3'>
@@ -149,8 +160,10 @@ const TourDetails = () => {
                 <Ionicons name='calendar-outline' size={20} color='#0d9488' />
               </View>
               <View>
-                <Text className='text-slate-400 text-xs'>Start Date</Text>
-                <Text className='text-slate-800 font-semibold'>
+                <Text className='text-slate-400 dark:text-slate-300 text-xs'>
+                  Start Date
+                </Text>
+                <Text className='text-slate-800 dark:text-slate-300 font-semibold'>
                   {formatDate(tour.startDate)}
                 </Text>
               </View>
@@ -160,8 +173,10 @@ const TourDetails = () => {
                 <Ionicons name='bus-outline' size={20} color='#0d9488' />
               </View>
               <View>
-                <Text className='text-slate-400 text-xs'>Departure</Text>
-                <Text className='text-slate-800 font-semibold'>
+                <Text className='text-slate-400 dark:text-slate-300 text-xs'>
+                  Departure
+                </Text>
+                <Text className='text-slate-800 dark:text-slate-300 font-semibold'>
                   {tour.departureLocation}
                 </Text>
               </View>
@@ -171,7 +186,7 @@ const TourDetails = () => {
           {/* Included & Excluded */}
           <View className='flex-row mb-6'>
             <View className='flex-1 pr-2'>
-              <Text className='text-slate-800 font-bold text-lg mb-3'>
+              <Text className='text-slate-800 dark:text-slate-300 font-bold text-lg mb-3'>
                 Included
               </Text>
               {tour.included?.map((item, index) => (
@@ -182,12 +197,14 @@ const TourDetails = () => {
                     color='#10b981'
                     className='mt-0.5'
                   />
-                  <Text className='text-slate-600 ml-2 flex-1'>{item}</Text>
+                  <Text className='text-slate-600 dark:text-slate-300 ml-2 flex-1'>
+                    {item}
+                  </Text>
                 </View>
               ))}
             </View>
             <View className='flex-1 pl-2'>
-              <Text className='text-slate-800 font-bold text-lg mb-3'>
+              <Text className='text-slate-800 dark:text-slate-300 font-bold text-lg mb-3'>
                 Excluded
               </Text>
               {tour.excluded?.map((item, index) => (
@@ -198,14 +215,16 @@ const TourDetails = () => {
                     color='#ef4444'
                     className='mt-0.5'
                   />
-                  <Text className='text-slate-600 ml-2 flex-1'>{item}</Text>
+                  <Text className='text-slate-600 dark:text-slate-300 ml-2 flex-1'>
+                    {item}
+                  </Text>
                 </View>
               ))}
             </View>
           </View>
 
           {/* Tour Plan / Itinerary */}
-          <Text className='text-slate-800 font-bold text-xl mb-4'>
+          <Text className='text-slate-800 dark:text-slate-300 font-bold text-xl mb-4'>
             Tour Plan
           </Text>
           <View className='pl-2 mb-6'>
@@ -220,27 +239,29 @@ const TourDetails = () => {
                 </View>
                 {/* Content */}
                 <View className='-mt-1 flex-1'>
-                  <Text className='text-slate-800 font-semibold text-base mb-1'>
+                  <Text className='text-slate-800 dark:text-slate-300 font-semibold text-base mb-1'>
                     Step {index + 1}
                   </Text>
-                  <Text className='text-slate-500'>{plan}</Text>
+                  <Text className='text-slate-500 dark:text-slate-300'>
+                    {plan}
+                  </Text>
                 </View>
               </View>
             ))}
           </View>
-        </View>
+        </ThemedView>
       </ScrollView>
 
       {/* --- STICKY BOTTOM BOOKING BAR --- */}
-      <View
-        className='absolute bottom-0 w-full bg-white px-5 py-4 border-t border-slate-100 flex-row items-center justify-between'
+      <ThemedView
+        className='absolute bottom-0 w-full px-5 py-4 border-t border-slate-100 flex-row items-center justify-between'
         style={{ paddingBottom: 30 }} // Extra padding for iPhone home indicator
       >
         <View>
-          <Text className='text-slate-400 text-xs font-semibold uppercase tracking-wider mb-0.5'>
+          <Text className='text-slate-400 dark:text-slate-300 text-xs font-semibold uppercase tracking-wider mb-0.5'>
             Total Price
           </Text>
-          <Text className='text-slate-900 font-black text-2xl'>
+          <Text className='text-slate-900 dark:text-slate-300 font-black text-2xl'>
             ৳{tour.costFrom?.toLocaleString()}
           </Text>
         </View>
@@ -254,7 +275,7 @@ const TourDetails = () => {
             Book Now
           </Text>
         </TouchableOpacity>
-      </View>
+      </ThemedView>
     </View>
   );
 };
