@@ -5,6 +5,7 @@
   "dependencies": {
     "@expo/ui": "~57.0.4",
     "@expo/vector-icons": "^15.1.1",
+    "@react-navigation/bottom-tabs": "^7.18.16",
     "@tailwindcss/postcss": "^4.3.2",
     "expo": "~57.0.4",
     "expo-constants": "~57.0.3",
