@@ -4,7 +4,12 @@ import ThemedView from "@/components/ui/ThemedView";
 const Bookings = () => {
   return (
     <ThemedView>
-      <ThemedText>Bookings</ThemedText>
+      <ThemedText
+        variant='title'
+        className='text-center text-lg font-bold py-5'
+      >
+        Bookings
+      </ThemedText>
     </ThemedView>
   );
 };

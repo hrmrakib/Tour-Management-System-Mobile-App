@@ -19,7 +19,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({
     <TouchableOpacity
       onPress={toggleTheme}
       activeOpacity={0.8}
-      className={`flex-row items-center justify-center p-2 rounded-full bg-surface border border-customBorder ${className}`}
+      className={`flex-row items-center justify-center p-2 rounded-full bg-surface border border-primary ${className}`}
     >
       <View className='items-center justify-center w-8 h-8 rounded-full bg-background'>
         <Ionicons

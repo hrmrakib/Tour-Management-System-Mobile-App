@@ -35,7 +35,7 @@
     --surface: #ffffff;
     --link: #0074be;
     --navBackground: #e8e7ef;
-    --border: #e0e0e0;
+    --border: #852323;
     --iconColor: #686477;
     --iconColorFocused: #201e2b;
   }
@@ -53,7 +53,7 @@
       --surface: #2f2b3d;
       --link: #0074be;
       --navBackground: #201e2b;
-      --border: #094786;
+      --border: #e8e9eb;
       --iconColor: #9591a5;
       --iconColorFocused: #ffffff;
     }
