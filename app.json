@@ -39,7 +39,8 @@
           "hidden": false,
           "style": "dark"
         }
-      ]
+      ],
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true,
