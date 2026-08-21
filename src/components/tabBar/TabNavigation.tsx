@@ -41,13 +41,22 @@ function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   });
 
   return (
-    <View style={[styles.tabBarWrapper, { bottom: 6 }]}>
-      <View style={[styles.tabBarContainer, { backgroundColor: isDark ? "rgba(30, 41, 59, 0.85)" : "rgba(255,255,255,0.7)" }]}>
+    <View style={[styles.tabBarWrapper, { bottom: -30 }]}>
+      <View
+        style={[
+          styles.tabBarContainer,
+          {
+            backgroundColor: isDark
+              ? "rgba(30, 41, 59, 0.85)"
+              : "rgba(255,255,255,0.7)",
+          },
+        ]}
+      >
         {/* Background Main Glass */}
         <GlassView
           style={StyleSheet.absoluteFill}
           colorScheme={isDark ? "dark" : "light"}
-          glassEffectStyle="regular"
+          glassEffectStyle='regular'
         />
 
         <View style={styles.innerContainer}>
@@ -104,7 +113,7 @@ function CustomTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
               return (
                 <TouchableOpacity
                   key={route.key}
-                  accessibilityRole="button"
+                  accessibilityRole='button'
                   accessibilityState={isFocused ? { selected: true } : {}}
                   accessibilityLabel={options.tabBarAccessibilityLabel}
                   onPress={onPress}
@@ -204,10 +213,10 @@ function TabNavigation() {
         headerShown: false,
       }}
     >
-      <Tabs.Screen name="index" options={{ title: "Home" }} />
-      <Tabs.Screen name="search" options={{ title: "Search" }} />
-      <Tabs.Screen name="bookings" options={{ title: "Bookings" }} />
-      <Tabs.Screen name="account" options={{ title: "Account" }} />
+      <Tabs.Screen name='index' options={{ title: "Home" }} />
+      <Tabs.Screen name='search' options={{ title: "Search" }} />
+      <Tabs.Screen name='bookings' options={{ title: "Bookings" }} />
+      <Tabs.Screen name='account' options={{ title: "Account" }} />
     </Tabs>
   );
 }
