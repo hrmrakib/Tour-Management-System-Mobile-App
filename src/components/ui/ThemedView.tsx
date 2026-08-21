@@ -4,7 +4,7 @@ import { View, ViewProps } from "react-native";
 interface ThemedViewProps extends ViewProps {
   className?: string;
   children?: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary" | "none";
 }
 
 const ThemedView: React.FC<ThemedViewProps> = ({
@@ -16,7 +16,12 @@ const ThemedView: React.FC<ThemedViewProps> = ({
   // Map variants directly to your registered Tailwind theme color variables
   // - "primary" handles your main screen canvas background
   // - "secondary" handles cards or sub-sections via your surface color variable
-  const variantClass = variant === "primary" ? "bg-background" : "bg-surface";
+  const variantClass = {
+    primary: "bg-background dark:bg-background",
+    secondary: "bg-surface dark:bg-surface",
+    tertiary: "bg-transparent dark:bg-transparent",
+    none: "",
+  }[variant];
 
   return (
     <View className={`flex-1 ${variantClass} ${className}`} {...props}>
